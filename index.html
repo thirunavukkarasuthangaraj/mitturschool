@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="ta" class="lang-tamil">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="அரசு மேல்நிலைப்பள்ளி, மிட்டூர் - 6 முதல் 12 வகுப்பு வரை தரமான கல்வி. SSLC மற்றும் HSC தேர்வுகள். இலவச விடுதி மற்றும் உணவு.">
+    <meta name="keywords" content="மிட்டூர் பள்ளி, அரசு மேல்நிலைப்பள்ளி, தமிழ்நாடு அரசு பள்ளி, GHSS Mittur">
+    <title>அரசு மேல்நிலைப்பள்ளி, மிட்டூர் | சிறந்த கல்வி</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Tamil', sans-serif;
+        }
+
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57c5b6;
+            --accent: #f4a261;
+            --accent-light: #fce8d5;
+            --dark: #1a1a2e;
+            --light: #ffffff;
+            --gray: #f8f9fa;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Modern Header */
+        .modern-header {
+            background: var(--light);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-switch {
+            display: flex;
+            background: var(--gray);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .lang-switch button {
+            border: none;
+            background: transparent;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .lang-switch button.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, var(--accent), #e76f51);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(244, 162, 97, 0.4);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(244, 162, 97, 0.5);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Decorative Blobs */
+        .blob-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--accent-light);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            top: -100px;
+            right: -150px;
+            z-index: 0;
+            animation: blob-float 8s ease-in-out infinite;
+        }
+
+        .blob-2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(87, 197, 182, 0.2), rgba(26, 95, 122, 0.1));
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            bottom: -100px;
+            left: -100px;
+            z-index: 0;
+            animation: blob-float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes blob-float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+
+        /* Decorative Hearts */
+        .hearts-decoration {
+            position: absolute;
+            left: 50px;
+            bottom: 100px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hearts-decoration svg {
+            width: 300px;
+            height: auto;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            padding-right: 40px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(26, 95, 122, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(26, 95, 122, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Photo Collage & Slider */
+        .photo-collage {
+            position: relative;
+            height: 500px;
+        }
+
+        .collage-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .collage-blob {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            top: -5%;
+            left: -5%;
+            background: var(--accent-light);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: 0;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 85%;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .slider-track {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slider-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .slider-slide.active {
+            opacity: 1;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .slider-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-dot.active {
+            background: white;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .slider-dot:hover {
+            background: rgba(255,255,255,0.8);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 50px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: var(--gray);
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), #e76f51);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(26, 95, 122, 0.3);
+        }
+
+        .feature-card h4 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Programs Section */
+        .programs-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .program-card {
+            background: var(--gray);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .program-header h4 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .program-header span {
+            opacity: 0.9;
+        }
+
+        .program-body {
+            padding: 30px;
+        }
+
+        .program-body ul {
+            list-style: none;
+        }
+
+        .program-body li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .program-body li:last-child {
+            border-bottom: none;
+        }
+
+        .program-body li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background: var(--gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--accent-light);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            top: -150px;
+            left: -150px;
+            z-index: 0;
+        }
+
+        .gallery-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        /* Alumni Section */
+        .alumni-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .alumni-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .alumni-card {
+            background: var(--gray);
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .alumni-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .alumni-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+            color: white;
+        }
+
+        .alumni-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .alumni-batch {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .alumni-profession {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .alumni-quote {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            right: -100px;
+            top: -100px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Modern Footer */
+        .modern-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .footer-brand p {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h5 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 25px;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .alumni-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .photo-collage {
+                height: 400px;
+                margin-top: 40px;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-btn {
+                display: none;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .alumni-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collage-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .collage-item:nth-child(1) { grid-column: span 2; }
+            .collage-item:nth-child(4) { grid-column: span 2; }
+        }
+
+        /* Language Toggle */
+        .lang-ta, .lang-en { display: none !important; }
+        body.lang-tamil .lang-ta { display: block !important; }
+        body.lang-english .lang-en { display: block !important; }
+        body.lang-tamil span.lang-ta { display: inline !important; }
+        body.lang-english span.lang-en { display: inline !important; }
+        body.lang-tamil ul.lang-ta { display: block !important; }
+        body.lang-english ul.lang-en { display: block !important; }
+    </style>
+</head>
+<body class="lang-tamil">
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-icon">&#127979;</div>
+                <div class="logo-text">
+                    <h1>GHSS Mittur</h1>
+                    <p><span class="lang-ta">அரசு மேல்நிலைப்பள்ளி</span><span class="lang-en">Govt Higher Secondary School</span></p>
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><span class="lang-ta">முகப்பு</span><span class="lang-en">Home</span></a></li>
+                <li><a href="teachers.html"><span class="lang-ta">ஆசிரியர்கள்</span><span class="lang-en">Teachers</span></a></li>
+                <li><a href="about.html"><span class="lang-ta">எங்களை பற்றி</span><span class="lang-en">About</span></a></li>
+                <li><a href="facilities.html"><span class="lang-ta">வசதிகள்</span><span class="lang-en">Facilities</span></a></li>
+                <li><a href="events.html"><span class="lang-ta">நிகழ்வுகள்</span><span class="lang-en">Events</span></a></li>
+            </ul>
+
+            <div class="header-right">
+                <div class="lang-switch">
+                    <button class="lang-btn-ta active">தமிழ்</button>
+                    <button class="lang-btn-en">EN</button>
+                </div>
+                <a href="contact.html" class="contact-btn">
+                    <span>&#128222;</span>
+                    <span class="lang-ta">தொடர்பு</span><span class="lang-en">Contact</span>
+                </a>
+            </div>
+
+            <button class="menu-toggle">&#9776;</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+
+        <div class="hearts-decoration">
+            <svg viewBox="0 0 200 200">
+                <path d="M50,50 Q25,25 50,0 Q75,25 50,50" fill="none" stroke="#1a5f7a" stroke-width="2" opacity="0.3"/>
+                <path d="M100,80 Q75,55 100,30 Q125,55 100,80" fill="none" stroke="#1a5f7a" stroke-width="2" opacity="0.3"/>
+                <path d="M30,120 Q5,95 30,70 Q55,95 30,120" fill="none" stroke="#1a5f7a" stroke-width="2" opacity="0.3"/>
+                <path d="M80,150 Q55,125 80,100 Q105,125 80,150" fill="none" stroke="#1a5f7a" stroke-width="2" opacity="0.3"/>
+            </svg>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge"><span class="lang-ta">அரசு பள்ளி</span><span class="lang-en">Government School</span></div>
+                <h1 class="hero-title">
+                    <span class="lang-ta">அரசு மேல்நிலைப்பள்ளி, மிட்டூர்</span>
+                    <span class="lang-en">Govt Higher Secondary School, Mittur</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span class="lang-ta">தரமான இலவச கல்வி | வகுப்பு 6 - 12</span>
+                    <span class="lang-en">Quality Free Education | Class 6 - 12</span>
+                </p>
+                <p class="hero-description">
+                    <span class="lang-ta">SSLC மற்றும் HSC தேர்வுகள். இலவச விடுதி, உணவு மற்றும் மடிக்கணினி. அனுபவம் வாய்ந்த ஆசிரியர்கள். அறிவியல், வணிகவியல், கலை பிரிவுகள்.</span>
+                    <span class="lang-en">SSLC and HSC board exams. Free hostel, food and laptop. Experienced teachers. Science, Commerce, Arts streams.</span>
+                </p>
+                <div class="hero-buttons">
+                    <a href="about.html" class="btn-primary">
+                        <span>&#128218;</span>
+                        <span class="lang-ta">மேலும் அறிக</span><span class="lang-en">Learn More</span>
+                    </a>
+                    <a href="contact.html" class="btn-outline">
+                        <span>&#128205;</span>
+                        <span class="lang-ta">எங்களை சந்தியுங்கள்</span><span class="lang-en">Visit Us</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="photo-collage">
+                <div class="collage-wrapper">
+                    <div class="collage-blob"></div>
+                    <!-- Image Slider -->
+                    <div class="hero-slider">
+                        <div class="slider-track">
+                            <div class="slider-slide active">
+                                <img src="images/mittueschool.webp" alt="School Building">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="images/second.webp" alt="Students">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="images/three.webp" alt="Activities">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="images/five.webp" alt="Campus">
+                            </div>
+                        </div>
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                        <div class="slider-dots">
+                            <span class="slider-dot active"></span>
+                            <span class="slider-dot"></span>
+                            <span class="slider-dot"></span>
+                            <span class="slider-dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-icon">&#127891;</div>
+                <div class="stat-number">6-12</div>
+                <div class="stat-label"><span class="lang-ta">வகுப்புகள்</span><span class="lang-en">Classes</span></div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">&#128203;</div>
+                <div class="stat-number">SSLC</div>
+                <div class="stat-label"><span class="lang-ta">10ஆம் வகுப்பு</span><span class="lang-en">10th Board</span></div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">&#127942;</div>
+                <div class="stat-number">HSC</div>
+                <div class="stat-label"><span class="lang-ta">12ஆம் வகுப்பு</span><span class="lang-en">12th Board</span></div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">&#127968;</div>
+                <div class="stat-number"><span class="lang-ta">இலவசம்</span><span class="lang-en">FREE</span></div>
+                <div class="stat-label"><span class="lang-ta">விடுதி & உணவு</span><span class="lang-en">Hostel & Food</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge"><span class="lang-ta">எங்கள் சிறப்புகள்</span><span class="lang-en">Why Choose Us</span></div>
+                <h2 class="section-title"><span class="lang-ta">சிறந்த வசதிகள்</span><span class="lang-en">Best Facilities</span></h2>
+                <p class="section-subtitle"><span class="lang-ta">மாணவர்களின் முழுமையான வளர்ச்சிக்கு அனைத்து வசதிகளும்</span><span class="lang-en">All facilities for complete development of students</span></p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#128104;&#8205;&#127891;</div>
+                    <h4><span class="lang-ta">சிறந்த ஆசிரியர்கள்</span><span class="lang-en">Expert Teachers</span></h4>
+                    <p><span class="lang-ta">அனைத்து பாடங்களுக்கும் PG & BT ஆசிரியர்கள்</span><span class="lang-en">PG & BT teachers for all subjects</span></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#127968;</div>
+                    <h4><span class="lang-ta">இலவச விடுதி</span><span class="lang-en">Free Hostel</span></h4>
+                    <p><span class="lang-ta">தொலைவிலிருந்து வரும் மாணவர்களுக்கு இலவச தங்குமிடம்</span><span class="lang-en">Free accommodation for students from far</span></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#127860;</div>
+                    <h4><span class="lang-ta">இலவச உணவு</span><span class="lang-en">Free Meals</span></h4>
+                    <p><span class="lang-ta">தினமும் மூன்று வேளை சத்தான உணவு</span><span class="lang-en">Nutritious meals three times daily</span></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128187;</div>
+                    <h4><span class="lang-ta">இலவச லேப்டாப்</span><span class="lang-en">Free Laptop</span></h4>
+                    <p><span class="lang-ta">11 & 12 வகுப்பு மாணவர்களுக்கு</span><span class="lang-en">For class 11 & 12 students</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge"><span class="lang-ta">கல்வி திட்டங்கள்</span><span class="lang-en">Academic Programs</span></div>
+                <h2 class="section-title"><span class="lang-ta">முழுமையான கல்வி பாதை</span><span class="lang-en">Complete Education Path</span></h2>
+            </div>
+
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-header">
+                        <h4><span class="lang-ta">நடுநிலைப்பள்ளி</span><span class="lang-en">Middle School</span></h4>
+                        <span><span class="lang-ta">வகுப்பு 6, 7 & 8</span><span class="lang-en">Class 6, 7 & 8</span></span>
+                    </div>
+                    <div class="program-body">
+                        <ul class="lang-ta">
+                            <li>வலுவான அடிப்படை கல்வி</li>
+                            <li>தமிழ் & ஆங்கிலம்</li>
+                            <li>கணிதம் & அறிவியல்</li>
+                            <li>ஒழுக்கக் கல்வி</li>
+                        </ul>
+                        <ul class="lang-en">
+                            <li>Strong foundation education</li>
+                            <li>Tamil & English</li>
+                            <li>Mathematics & Science</li>
+                            <li>Moral education</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-header">
+                        <h4><span class="lang-ta">உயர்நிலைப்பள்ளி</span><span class="lang-en">High School</span></h4>
+                        <span><span class="lang-ta">வகுப்பு 9 & 10 (SSLC)</span><span class="lang-en">Class 9 & 10 (SSLC)</span></span>
+                    </div>
+                    <div class="program-body">
+                        <ul class="lang-ta">
+                            <li>SSLC தேர்வு தயாரிப்பு</li>
+                            <li>சிறப்பு பயிற்சி வகுப்புகள்</li>
+                            <li>தொழில் வழிகாட்டுதல்</li>
+                            <li>போட்டித் தேர்வு பயிற்சி</li>
+                        </ul>
+                        <ul class="lang-en">
+                            <li>SSLC exam preparation</li>
+                            <li>Special coaching classes</li>
+                            <li>Career guidance</li>
+                            <li>Competitive exam coaching</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-header">
+                        <h4><span class="lang-ta">மேல்நிலைப்பள்ளி</span><span class="lang-en">Higher Secondary</span></h4>
+                        <span><span class="lang-ta">வகுப்பு 11 & 12 (HSC)</span><span class="lang-en">Class 11 & 12 (HSC)</span></span>
+                    </div>
+                    <div class="program-body">
+                        <ul class="lang-ta">
+                            <li>அறிவியல் பிரிவு</li>
+                            <li>வணிகவியல் பிரிவு</li>
+                            <li>கலை பிரிவு</li>
+                            <li>HSC தேர்வு பயிற்சி</li>
+                        </ul>
+                        <ul class="lang-en">
+                            <li>Science stream</li>
+                            <li>Commerce stream</li>
+                            <li>Arts stream</li>
+                            <li>HSC exam coaching</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-blob"></div>
+        <div class="section-container gallery-content">
+            <div class="section-header">
+                <div class="section-badge"><span class="lang-ta">புகைப்பட தொகுப்பு</span><span class="lang-en">Photo Gallery</span></div>
+                <h2 class="section-title"><span class="lang-ta">எங்கள் பள்ளி</span><span class="lang-en">Our School</span></h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/mittueschool.webp" alt="School Main Building">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/second.webp" alt="Students">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/three.webp" alt="Activities">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/five.webp" alt="Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section class="alumni-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge"><span class="lang-ta">பழைய மாணவர்கள்</span><span class="lang-en">Our Alumni</span></div>
+                <h2 class="section-title"><span class="lang-ta">எங்கள் பெருமை</span><span class="lang-en">Our Pride</span></h2>
+            </div>
+
+            <div class="alumni-grid">
+                <div class="alumni-card">
+                    <div class="alumni-photo">&#128104;&#8205;&#127891;</div>
+                    <h4 class="alumni-name"><span class="lang-ta">[பெயர்]</span><span class="lang-en">[Name]</span></h4>
+                    <span class="alumni-batch"><span class="lang-ta">தொகுதி 2015</span><span class="lang-en">Batch 2015</span></span>
+                    <p class="alumni-profession"><span class="lang-ta">மென்பொருள் பொறியாளர்</span><span class="lang-en">Software Engineer</span></p>
+                    <p class="alumni-quote">"<span class="lang-ta">இந்த பள்ளி என் வாழ்க்கையை மாற்றியது</span><span class="lang-en">This school changed my life</span>"</p>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-photo">&#128105;&#8205;&#9877;&#65039;</div>
+                    <h4 class="alumni-name"><span class="lang-ta">[பெயர்]</span><span class="lang-en">[Name]</span></h4>
+                    <span class="alumni-batch"><span class="lang-ta">தொகுதி 2012</span><span class="lang-en">Batch 2012</span></span>
+                    <p class="alumni-profession"><span class="lang-ta">மருத்துவர்</span><span class="lang-en">Doctor</span></p>
+                    <p class="alumni-quote">"<span class="lang-ta">இலவச விடுதி என் கனவை நனவாக்கியது</span><span class="lang-en">Free hostel made my dream come true</span>"</p>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-photo">&#128104;&#8205;&#128188;</div>
+                    <h4 class="alumni-name"><span class="lang-ta">[பெயர்]</span><span class="lang-en">[Name]</span></h4>
+                    <span class="alumni-batch"><span class="lang-ta">தொகுதி 2018</span><span class="lang-en">Batch 2018</span></span>
+                    <p class="alumni-profession"><span class="lang-ta">வங்கி அதிகாரி</span><span class="lang-en">Bank Officer</span></p>
+                    <p class="alumni-quote">"<span class="lang-ta">ஆசிரியர்கள் வாழ்க்கை பாடம் கற்பித்தனர்</span><span class="lang-en">Teachers taught life lessons</span>"</p>
+                </div>
+                <div class="alumni-card">
+                    <div class="alumni-photo">&#128105;&#8205;&#127979;</div>
+                    <h4 class="alumni-name"><span class="lang-ta">[பெயர்]</span><span class="lang-en">[Name]</span></h4>
+                    <span class="alumni-batch"><span class="lang-ta">தொகுதி 2010</span><span class="lang-en">Batch 2010</span></span>
+                    <p class="alumni-profession"><span class="lang-ta">அரசு ஆசிரியர்</span><span class="lang-en">Govt Teacher</span></p>
+                    <p class="alumni-quote">"<span class="lang-ta">இப்போது நானும் சேவை செய்கிறேன்</span><span class="lang-en">Now I also serve students</span>"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-blob"></div>
+        <div class="section-container cta-content">
+            <h3><span class="lang-ta">எங்கள் பள்ளியில் சேர தயாரா?</span><span class="lang-en">Ready to Join Our School?</span></h3>
+            <p><span class="lang-ta">6 முதல் 12 வகுப்பு வரை சேர்க்கை நடைபெறுகிறது. இலவச கல்வி, விடுதி மற்றும் உணவு வசதியுடன்.</span><span class="lang-en">Admissions open for Class 6 to 12. With free education, hostel and food facilities.</span></p>
+            <a href="contact.html" class="btn-white">
+                <span>&#128205;</span>
+                <span class="lang-ta">இன்றே தொடர்பு கொள்ளுங்கள்</span><span class="lang-en">Contact Us Today</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>GHSS Mittur</h4>
+                    <p class="lang-ta">மிட்டூர் கிராமத்தின் மையத்தில் தரமான அரசு கல்வி. 6 முதல் 12 வகுப்பு வரை.</p>
+                    <p class="lang-en">Quality government education in the heart of Mittur village. Class 6 to 12.</p>
+                </div>
+                <div class="footer-links">
+                    <h5><span class="lang-ta">விரைவு இணைப்புகள்</span><span class="lang-en">Quick Links</span></h5>
+                    <a href="about.html"><span class="lang-ta">எங்களை பற்றி</span><span class="lang-en">About Us</span></a>
+                    <a href="teachers.html"><span class="lang-ta">ஆசிரியர்கள்</span><span class="lang-en">Teachers</span></a>
+                    <a href="facilities.html"><span class="lang-ta">வசதிகள்</span><span class="lang-en">Facilities</span></a>
+                    <a href="events.html"><span class="lang-ta">நிகழ்வுகள்</span><span class="lang-en">Events</span></a>
+                </div>
+                <div class="footer-links">
+                    <h5><span class="lang-ta">முகவரி</span><span class="lang-en">Address</span></h5>
+                    <p style="color: #aaa; font-size: 0.95rem; line-height: 1.8;">
+                        <span class="lang-ta">அரசு மேல்நிலைப்பள்ளி<br>மிட்டூர் - 635710<br>தமிழ்நாடு</span>
+                        <span class="lang-en">Govt Hr Sec School<br>Mittur - 635710<br>Tamil Nadu</span>
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h5><span class="lang-ta">மறுப்பு</span><span class="lang-en">Disclaimer</span></h5>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.8;">
+                        <span class="lang-ta">இது சமூக தகவல் இணையதளம். அரசு அதிகாரப்பூர்வ இணையதளம் அல்ல.</span>
+                        <span class="lang-en">This is a community info website. NOT an official govt website.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><span class="lang-ta">சமூக தன்னார்வலர்களால் அன்புடன் உருவாக்கப்பட்டது</span><span class="lang-en">Created with love by community volunteers</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Hero Slider
+        const slides = document.querySelectorAll('.slider-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        function startSlider() { slideInterval = setInterval(nextSlide, 4000); }
+        function stopSlider() { clearInterval(slideInterval); }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => { stopSlider(); nextSlide(); startSlider(); });
+            prevBtn.addEventListener('click', () => { stopSlider(); prevSlide(); startSlider(); });
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => { stopSlider(); showSlide(i); startSlider(); });
+            });
+
+            const slider = document.querySelector('.hero-slider');
+            slider.addEventListener('mouseenter', stopSlider);
+            slider.addEventListener('mouseleave', startSlider);
+
+            // Touch support
+            let touchStartX = 0;
+            slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive: true});
+            slider.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    stopSlider();
+                    diff > 0 ? nextSlide() : prevSlide();
+                    startSlider();
+                }
+            }, {passive: true});
+
+            startSlider();
+        }
+    </script>
+</body>
+</html>
