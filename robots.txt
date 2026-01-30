@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mitturschool.in/sitemap.xml
+
+# GHSS Mittur School Website
+# https://mitturschool.in
