@@ -100,30 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for fade-in animation
-    const animatedElements = document.querySelectorAll('.modern-card, .info-box, .section-header, .notice-box, .modern-table');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+    // ===== FADE IN ANIMATION (CSS-based, no JS hiding) =====
+    // Content is visible by default - animations handled via CSS only
 
     // ===== SMOOTH ANCHOR SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1028,3 +1028,14 @@ body.lang-english table.lang-en { display: table !important; }
 .modern-card:hover .card-icon {
     animation: pulse 1s ease-in-out infinite;
 }
+
+/* Force visibility for content elements - override JS animation issues */
+.section-header,
+.modern-card,
+.info-box,
+.modern-table,
+.cards-grid,
+.notice-box {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
