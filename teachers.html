@@ -31,6 +31,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/modern.css">
+    <style>
+        /* Force all content visible */
+        .section-header, .modern-card, .info-box, .modern-table, .cards-grid, .notice-box {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+        .cards-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+            gap: 30px !important;
+        }
+    </style>
 </head>
 <body class="lang-tamil">
     <!-- Modern Header -->
@@ -88,18 +101,18 @@
                 <h2 class="section-title"><span class="lang-ta">மொத்த ஆசிரியர்கள்: 24</span><span class="lang-en">Total Teachers: 24</span></h2>
             </div>
 
-            <div class="cards-grid" style="margin-bottom: 50px;">
-                <div class="modern-card">
+            <div class="cards-grid" style="margin-bottom: 50px; display: grid !important; opacity: 1 !important;">
+                <div class="modern-card" style="opacity: 1 !important; transform: none !important;">
                     <div class="card-icon">&#128104;&#8205;&#127891;</div>
                     <h4>16</h4>
                     <p><span class="lang-ta">ஆண் ஆசிரியர்கள்</span><span class="lang-en">Male Teachers</span></p>
                 </div>
-                <div class="modern-card">
+                <div class="modern-card" style="opacity: 1 !important; transform: none !important;">
                     <div class="card-icon">&#128105;&#8205;&#127891;</div>
                     <h4>8</h4>
                     <p><span class="lang-ta">பெண் ஆசிரியர்கள்</span><span class="lang-en">Female Teachers</span></p>
                 </div>
-                <div class="modern-card">
+                <div class="modern-card" style="opacity: 1 !important; transform: none !important;">
                     <div class="card-icon">&#127891;</div>
                     <h4>24</h4>
                     <p><span class="lang-ta">மொத்தம்</span><span class="lang-en">Total Staff</span></p>
