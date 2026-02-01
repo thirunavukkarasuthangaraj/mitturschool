@@ -252,7 +252,8 @@ body {
     position: relative;
     z-index: 1;
     text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 1;
 }
 
 .page-hero p {
@@ -260,7 +261,7 @@ body {
     opacity: 0.95;
     position: relative;
     z-index: 1;
-    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 
 @keyframes fadeInUp {
@@ -673,15 +674,17 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background: white;
+        background: #ffffff;
         flex-direction: column;
         padding: 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         border-radius: 0 0 20px 20px;
+        z-index: 9999;
     }
 
     .nav-menu.active {
         display: flex;
+        background: #ffffff;
     }
 
     .nav-menu a {

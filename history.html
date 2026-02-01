@@ -32,10 +32,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/modern.css">
     <style>
-        .section-header, .modern-card, .info-box, .modern-table, .cards-grid, .notice-box, .timeline {
+        .section-header, .modern-card, .info-box, .modern-table, .cards-grid, .notice-box, .timeline,
+        .page-hero h1, .page-hero p {
             opacity: 1 !important;
             transform: none !important;
             visibility: visible !important;
+        }
+
+        /* Mobile menu fix */
+        @media (max-width: 992px) {
+            .nav-menu {
+                background: white !important;
+                z-index: 9999 !important;
+            }
         }
 
         /* Timeline Styles */
