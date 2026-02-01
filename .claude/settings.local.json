@@ -10,7 +10,8 @@
       "Bash(git remote add:*)",
       "Bash(grep:*)",
       "WebSearch",
-      "WebFetch(domain:mitturschool.in)"
+      "Bash(git stash:*)",
+      "Bash(git stash pop:*)"
     ]
   }
 }
