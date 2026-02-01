@@ -993,20 +993,44 @@
             }
 
             .nav-menu {
-                display: none;
+                display: none !important;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: white;
+                background: #ffffff !important;
                 flex-direction: column;
                 padding: 20px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                border-radius: 0 0 15px 15px;
+                box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+                border-radius: 0 0 20px 20px;
+                max-height: 80vh;
+                overflow-y: auto;
+                z-index: 9999;
             }
 
             .nav-menu.active {
-                display: flex;
+                display: flex !important;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                margin: 5px 0;
+                list-style: none;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px !important;
+                border-radius: 12px;
+                font-size: 1.1rem;
+                color: #333 !important;
+                background: #f8f9fa;
+            }
+
+            .nav-menu a:hover,
+            .nav-menu a.active {
+                background: linear-gradient(135deg, #1a5f7a, #57c5b6) !important;
+                color: white !important;
             }
 
             .menu-toggle {
@@ -1017,6 +1041,7 @@
                 color: white;
                 padding: 10px 14px;
                 border-radius: 10px;
+                animation: menuPulse 2s ease-in-out infinite;
                 font-size: 1.3rem;
             }
 
