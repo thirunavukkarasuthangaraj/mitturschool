@@ -676,33 +676,47 @@ body {
     .nav-menu {
         display: none;
         position: fixed;
-        top: 70px;
+        top: 80px;
         left: 0;
         right: 0;
         bottom: 0;
-        background: #ffffff;
+        background: #ffffff !important;
         flex-direction: column;
-        padding: 30px 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        z-index: 9999;
+        padding: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        z-index: 9998;
         overflow-y: auto;
     }
 
     .nav-menu.active {
-        display: flex;
-        background: #ffffff;
+        display: flex !important;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        margin: 5px 0;
     }
 
     .nav-menu a {
+        display: block;
         padding: 15px 20px;
         border-radius: 12px;
         font-size: 1.1rem;
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
     }
 
     .menu-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 10001;
     }
 
     .contact-btn {
@@ -732,6 +746,16 @@ body {
 }
 
 @media (max-width: 576px) {
+    .nav-menu {
+        top: 65px;
+        padding: 15px;
+    }
+
+    .nav-menu a {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+
     .header-container {
         padding: 0 15px;
         gap: 10px;
