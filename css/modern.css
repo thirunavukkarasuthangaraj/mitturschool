@@ -499,12 +499,12 @@ body {
 
 /* Teacher Photo Card */
 .teacher-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 120px;
+    height: 150px;
+    border-radius: 12px;
     object-fit: cover;
     object-position: top;
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
     display: block;
     border: 3px solid var(--secondary);
     box-shadow: 0 4px 15px rgba(26, 95, 122, 0.2);
@@ -512,7 +512,7 @@ body {
 }
 
 .modern-card:hover .teacher-photo {
-    transform: scale(1.08);
+    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(26, 95, 122, 0.35);
 }
 
@@ -540,8 +540,8 @@ body {
 }
 
 .headmaster-card .teacher-photo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 190px;
     border-width: 4px;
     border-color: var(--primary);
 }
