@@ -37,6 +37,55 @@
             transform: none !important;
             visibility: visible !important;
         }
+
+        /* Event Gallery */
+        .event-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .gallery-item .gallery-caption {
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .gallery-item .gallery-caption h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+
+        .gallery-item .gallery-caption p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .event-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="lang-tamil">
@@ -234,6 +283,68 @@
                     <li><span class="lang-ta">கைப்பந்து போட்டிகளில் பங்கேற்பு</span><span class="lang-en">Participation in Volleyball competitions</span></li>
                     <li><span class="lang-ta">தடகள போட்டிகளில் பரிசுகள்</span><span class="lang-en">Prizes in Athletics events</span></li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Gallery -->
+    <section class="content-section" style="background: var(--gray);">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge"><span class="lang-ta">புகைப்படங்கள்</span><span class="lang-en">Photos</span></div>
+                <h2 class="section-title"><span class="lang-ta">நிகழ்வு புகைப்படங்கள்</span><span class="lang-en">Event Gallery</span></h2>
+            </div>
+
+            <div class="event-gallery">
+                <div class="gallery-item">
+                    <img src="images/Rebublic.jpeg" alt="Republic Day Celebration">
+                    <div class="gallery-caption">
+                        <h4><span class="lang-ta">குடியரசு தின கொண்டாட்டம்</span><span class="lang-en">Republic Day Celebration</span></h4>
+                        <p><span class="lang-ta">கொடி ஏற்றம் & சிறப்பு நிகழ்ச்சிகள்</span><span class="lang-en">Flag hoisting & Special programs</span></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/rebuclic1.jpeg" alt="Republic Day - Students with Flag">
+                    <div class="gallery-caption">
+                        <h4><span class="lang-ta">குடியரசு தினம் - மாணவர்கள்</span><span class="lang-en">Republic Day - Students</span></h4>
+                        <p><span class="lang-ta">தேசிய கொடியுடன் மாணவர்கள்</span><span class="lang-en">Students with National Flag</span></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ncc.jpeg" alt="NCC Camp">
+                    <div class="gallery-caption">
+                        <h4><span class="lang-ta">NCC முகாம்</span><span class="lang-en">NCC Camp</span></h4>
+                        <p><span class="lang-ta">தேசிய மாணவர் படை நிகழ்வு</span><span class="lang-en">National Cadet Corps Event</span></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nss.jpeg" alt="NSS Camp">
+                    <div class="gallery-caption">
+                        <h4><span class="lang-ta">NSS முகாம்</span><span class="lang-en">NSS Camp</span></h4>
+                        <p><span class="lang-ta">தேசிய சேவை திட்ட முகாம்</span><span class="lang-en">National Service Scheme Camp</span></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nextlevel-carrier.jpeg" alt="Career Guidance">
+                    <div class="gallery-caption">
+                        <h4><span class="lang-ta">தொழில் வழிகாட்டுதல்</span><span class="lang-en">Career Guidance</span></h4>
+                        <p><span class="lang-ta">மாணவர்களுக்கு தொழில் ஆலோசனை</span><span class="lang-en">Career counseling for students</span></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nextlevel-carrier (2).jpeg" alt="Career Guidance Session">
+                    <div class="gallery-caption">
+                        <h4><span class="lang-ta">தொழில் வழிகாட்டுதல் அமர்வு</span><span class="lang-en">Career Guidance Session</span></h4>
+                        <p><span class="lang-ta">மாணவர் உரை</span><span class="lang-en">Student presentation</span></p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/medication camp.webp" alt="Yoga Day">
+                    <div class="gallery-caption">
+                        <h4><span class="lang-ta">யோகா தினம்</span><span class="lang-en">Yoga Day</span></h4>
+                        <p><span class="lang-ta">மாணவர்கள் யோகா பயிற்சி</span><span class="lang-en">Students practicing Yoga</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
