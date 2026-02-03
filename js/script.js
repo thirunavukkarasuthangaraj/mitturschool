@@ -1,6 +1,6 @@
 /**
  * GHSS Mittur - School Website JavaScript
- * Created by Thirunavukkarasu Thangaraj (Old Student) | 6374217724
+ * Created by Old Student
  * Enhanced with smooth animations and interactions
  */
 
@@ -224,6 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== CONSOLE MESSAGE =====
     console.log('%c GHSS Mittur ', 'background: linear-gradient(135deg, #1a5f7a, #57c5b6); color: white; padding: 12px 24px; font-size: 18px; font-weight: bold; border-radius: 8px;');
-    console.log('%c Website by Thirunavukkarasu Thangaraj (Old Student) | 6374217724 ', 'color: #1a5f7a; font-size: 14px; font-weight: bold;');
+    console.log('%c Website by Old Student ', 'color: #1a5f7a; font-size: 14px; font-weight: bold;');
     console.log('%c https://mitturschool.in ', 'color: #57c5b6; font-size: 12px;');
 });
