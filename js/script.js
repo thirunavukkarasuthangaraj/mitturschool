@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!document.querySelector('.scroll-top')) {
         const scrollBtn = document.createElement('button');
         scrollBtn.className = 'scroll-top';
-        scrollBtn.innerHTML = '↑';
+        scrollBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>';
         scrollBtn.setAttribute('aria-label', 'Scroll to top');
         document.body.appendChild(scrollBtn);
 
@@ -100,8 +100,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== FADE IN ANIMATION (CSS-based, no JS hiding) =====
-    // Content is visible by default - animations handled via CSS only
+    // ===== SCROLL ANIMATIONS (IntersectionObserver) =====
+    const animateElements = document.querySelectorAll('.section-header, .modern-card, .notice-box, .headmaster-card, .section-badge, .info-box, .cards-grid');
+
+    animateElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+    });
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+
+                // Stagger cards inside a grid
+                if (el.classList.contains('modern-card') && el.parentElement.classList.contains('cards-grid')) {
+                    const cards = Array.from(el.parentElement.children);
+                    const index = cards.indexOf(el);
+                    el.style.transitionDelay = (index * 0.1) + 's';
+                }
+
+                el.classList.add('animated');
+                observer.unobserve(el);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    animateElements.forEach(el => observer.observe(el));
 
     // ===== SMOOTH ANCHOR SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -956,9 +956,10 @@ body {
     .scroll-top {
         bottom: 20px;
         right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        border-radius: 10px;
     }
 
     /* Footer mobile */
@@ -1041,29 +1042,35 @@ body.lang-english table.lang-en { display: table !important; }
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
     color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.3rem;
+    border: 2px solid white;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(26, 95, 122, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .scroll-top.visible {
-    opacity: 1;
+    opacity: 0.9;
     visibility: visible;
 }
 
 .scroll-top:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 30px rgba(26, 95, 122, 0.5);
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Loading Animation */
@@ -1081,13 +1088,67 @@ body.lang-english table.lang-en { display: table !important; }
     animation: pulse 1s ease-in-out infinite;
 }
 
-/* Force visibility for content elements - override JS animation issues */
-.section-header,
-.modern-card,
-.info-box,
-.modern-table,
-.cards-grid,
-.notice-box {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered card animations */
+.cards-grid .modern-card.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.cards-grid .modern-card.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Headmaster card special animation */
+.headmaster-card.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.headmaster-card.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Section badge slide in */
+.section-badge.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.section-badge.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Notice box animation */
+.notice-box.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.notice-box.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes countUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }

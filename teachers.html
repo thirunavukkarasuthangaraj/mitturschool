@@ -32,12 +32,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/modern.css">
     <style>
-        /* Force all content visible */
-        .section-header, .modern-card, .info-box, .modern-table, .cards-grid, .notice-box {
-            opacity: 1 !important;
-            transform: none !important;
-            visibility: visible !important;
-        }
         .cards-grid {
             display: grid !important;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
@@ -96,24 +90,40 @@
                 <p class="lang-en">This is a community info website. Staff information may change as per government orders.</p>
             </div>
 
+            <!-- Headmaster -->
+            <div class="section-header">
+                <div class="section-badge"><span class="lang-ta">தலைமை</span><span class="lang-en">Leadership</span></div>
+                <h2 class="section-title"><span class="lang-ta">தலைமையாசிரியர்</span><span class="lang-en">Headmaster</span></h2>
+            </div>
+
+            <div style="display: flex; justify-content: center; margin-bottom: 50px;">
+                <div class="modern-card headmaster-card" style="max-width: 400px; width: 100%; border: 2px solid var(--primary); position: relative;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, var(--primary), var(--secondary));"></div>
+                    <div class="card-icon" style="width: 100px; height: 100px; font-size: 3rem; border-radius: 50%;">&#128104;&#8205;&#127891;</div>
+                    <h4 style="font-size: 1.4rem; margin-bottom: 8px;"><span class="lang-ta">தலைமையாசிரியர்</span><span class="lang-en">Headmaster</span></h4>
+                    <p style="color: var(--primary); font-weight: 600; font-size: 1rem; margin-bottom: 8px;"><span class="lang-ta">அரசு மேல்நிலைப்பள்ளி, மிட்டூர்</span><span class="lang-en">GHSS Mittur</span></p>
+                    <p style="font-size: 0.9rem;"><span class="lang-ta">பள்ளி நிர்வாகம் மற்றும் கல்வி மேற்பார்வை</span><span class="lang-en">School Administration & Academic Supervision</span></p>
+                </div>
+            </div>
+
             <!-- Teacher Statistics -->
             <div class="section-header">
                 <div class="section-badge"><span class="lang-ta">ஆசிரியர் விவரங்கள்</span><span class="lang-en">Teacher Statistics</span></div>
                 <h2 class="section-title"><span class="lang-ta">மொத்த ஆசிரியர்கள்: 24</span><span class="lang-en">Total Teachers: 24</span></h2>
             </div>
 
-            <div class="cards-grid" style="margin-bottom: 50px; display: grid !important; opacity: 1 !important;">
-                <div class="modern-card" style="opacity: 1 !important; transform: none !important;">
+            <div class="cards-grid" style="margin-bottom: 50px; display: grid !important;">
+                <div class="modern-card">
                     <div class="card-icon">&#128104;&#8205;&#127891;</div>
                     <h4>16</h4>
                     <p><span class="lang-ta">ஆண் ஆசிரியர்கள்</span><span class="lang-en">Male Teachers</span></p>
                 </div>
-                <div class="modern-card" style="opacity: 1 !important; transform: none !important;">
+                <div class="modern-card">
                     <div class="card-icon">&#128105;&#8205;&#127891;</div>
                     <h4>8</h4>
                     <p><span class="lang-ta">பெண் ஆசிரியர்கள்</span><span class="lang-en">Female Teachers</span></p>
                 </div>
-                <div class="modern-card" style="opacity: 1 !important; transform: none !important;">
+                <div class="modern-card">
                     <div class="card-icon">&#127891;</div>
                     <h4>24</h4>
                     <p><span class="lang-ta">மொத்தம்</span><span class="lang-en">Total Staff</span></p>
@@ -126,29 +136,56 @@
                 <h2 class="section-title"><span class="lang-ta">PG ஆசிரியர்கள் (11-12)</span><span class="lang-en">PG Teachers (11-12)</span></h2>
             </div>
 
-            <div class="info-box" style="margin-bottom: 50px;">
-                <div class="modern-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><span class="lang-ta">எண்</span><span class="lang-en">No.</span></th>
-                                <th><span class="lang-ta">பாடம்</span><span class="lang-en">Subject</span></th>
-                                <th><span class="lang-ta">பதவி</span><span class="lang-en">Designation</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td><span class="lang-ta">தமிழ்</span><span class="lang-en">Tamil</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>2</td><td><span class="lang-ta">ஆங்கிலம்</span><span class="lang-en">English</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>3</td><td><span class="lang-ta">கணிதம்</span><span class="lang-en">Mathematics</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>4</td><td><span class="lang-ta">இயற்பியல்</span><span class="lang-en">Physics</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>5</td><td><span class="lang-ta">வேதியியல்</span><span class="lang-en">Chemistry</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>6</td><td><span class="lang-ta">உயிரியல் / தாவரவியல்</span><span class="lang-en">Biology / Botany</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>7</td><td><span class="lang-ta">வணிகவியல்</span><span class="lang-en">Commerce</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>8</td><td><span class="lang-ta">கணினி அறிவியல்</span><span class="lang-en">Computer Science</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>9</td><td><span class="lang-ta">வரலாறு</span><span class="lang-en">History</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                            <tr><td>10</td><td><span class="lang-ta">பொருளியல்</span><span class="lang-en">Economics</span></td><td><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></td></tr>
-                        </tbody>
-                    </table>
+            <div class="cards-grid" style="margin-bottom: 50px; display: grid !important;">
+                <div class="modern-card">
+                    <div class="card-icon">&#128220;</div>
+                    <h4><span class="lang-ta">தமிழ்</span><span class="lang-en">Tamil</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#127468;&#127463;</div>
+                    <h4><span class="lang-ta">ஆங்கிலம்</span><span class="lang-en">English</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#128290;</div>
+                    <h4><span class="lang-ta">கணிதம்</span><span class="lang-en">Mathematics</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#9883;</div>
+                    <h4><span class="lang-ta">இயற்பியல்</span><span class="lang-en">Physics</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#129514;</div>
+                    <h4><span class="lang-ta">வேதியியல்</span><span class="lang-en">Chemistry</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#129420;</div>
+                    <h4><span class="lang-ta">உயிரியல் / தாவரவியல்</span><span class="lang-en">Biology / Botany</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#128176;</div>
+                    <h4><span class="lang-ta">வணிகவியல்</span><span class="lang-en">Commerce</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#128187;</div>
+                    <h4><span class="lang-ta">கணினி அறிவியல்</span><span class="lang-en">Computer Science</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#127970;</div>
+                    <h4><span class="lang-ta">வரலாறு</span><span class="lang-en">History</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#128200;</div>
+                    <h4><span class="lang-ta">பொருளியல்</span><span class="lang-en">Economics</span></h4>
+                    <p><span class="lang-ta">PG உதவியாளர்</span><span class="lang-en">PG Assistant</span></p>
                 </div>
             </div>
 
@@ -158,25 +195,36 @@
                 <h2 class="section-title"><span class="lang-ta">BT ஆசிரியர்கள் (6-10)</span><span class="lang-en">BT Teachers (6-10)</span></h2>
             </div>
 
-            <div class="info-box">
-                <div class="modern-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><span class="lang-ta">எண்</span><span class="lang-en">No.</span></th>
-                                <th><span class="lang-ta">பாடம்</span><span class="lang-en">Subject</span></th>
-                                <th><span class="lang-ta">பதவி</span><span class="lang-en">Designation</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td><span class="lang-ta">தமிழ்</span><span class="lang-en">Tamil</span></td><td><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></td></tr>
-                            <tr><td>2</td><td><span class="lang-ta">ஆங்கிலம்</span><span class="lang-en">English</span></td><td><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></td></tr>
-                            <tr><td>3</td><td><span class="lang-ta">கணிதம்</span><span class="lang-en">Mathematics</span></td><td><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></td></tr>
-                            <tr><td>4</td><td><span class="lang-ta">அறிவியல்</span><span class="lang-en">Science</span></td><td><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></td></tr>
-                            <tr><td>5</td><td><span class="lang-ta">சமூக அறிவியல்</span><span class="lang-en">Social Science</span></td><td><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></td></tr>
-                            <tr><td>6</td><td><span class="lang-ta">உடற்கல்வி</span><span class="lang-en">Physical Education</span></td><td><span class="lang-ta">உடற்கல்வி இயக்குநர்</span><span class="lang-en">PD Teacher</span></td></tr>
-                        </tbody>
-                    </table>
+            <div class="cards-grid" style="display: grid !important;">
+                <div class="modern-card">
+                    <div class="card-icon">&#128220;</div>
+                    <h4><span class="lang-ta">தமிழ்</span><span class="lang-en">Tamil</span></h4>
+                    <p><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#127468;&#127463;</div>
+                    <h4><span class="lang-ta">ஆங்கிலம்</span><span class="lang-en">English</span></h4>
+                    <p><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#128290;</div>
+                    <h4><span class="lang-ta">கணிதம்</span><span class="lang-en">Mathematics</span></h4>
+                    <p><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#128300;</div>
+                    <h4><span class="lang-ta">அறிவியல்</span><span class="lang-en">Science</span></h4>
+                    <p><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#127758;</div>
+                    <h4><span class="lang-ta">சமூக அறிவியல்</span><span class="lang-en">Social Science</span></h4>
+                    <p><span class="lang-ta">BT உதவியாளர்</span><span class="lang-en">BT Assistant</span></p>
+                </div>
+                <div class="modern-card">
+                    <div class="card-icon">&#9917;</div>
+                    <h4><span class="lang-ta">உடற்கல்வி</span><span class="lang-en">Physical Education</span></h4>
+                    <p><span class="lang-ta">உடற்கல்வி இயக்குநர்</span><span class="lang-en">PD Teacher</span></p>
                 </div>
             </div>
         </div>
