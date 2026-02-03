@@ -86,6 +86,141 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Event Banner Slider */
+        .event-banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .event-banner .banner-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .event-banner .banner-slide.active {
+            opacity: 1;
+        }
+
+        .event-banner .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .event-banner .banner-slide .banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 40px 30px 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .event-banner .banner-slide .banner-overlay h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .event-banner .banner-slide .banner-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .banner-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.3);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 2;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .banner-btn:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .banner-prev { left: 15px; }
+        .banner-next { right: 15px; }
+
+        .banner-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .banner-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .banner-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .event-banner {
+                height: 300px;
+                margin-top: 70px;
+            }
+
+            .event-banner .banner-slide .banner-overlay h3 {
+                font-size: 1.2rem;
+            }
+
+            .event-banner .banner-slide .banner-overlay p {
+                font-size: 0.85rem;
+            }
+
+            .banner-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event-banner {
+                height: 250px;
+            }
+
+            .event-banner .banner-slide .banner-overlay {
+                padding: 25px 15px 20px;
+            }
+
+            .event-banner .banner-slide .banner-overlay h3 {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="lang-tamil">
@@ -124,10 +259,69 @@
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <h1><span class="lang-ta">நிகழ்வுகள்</span><span class="lang-en">Events</span></h1>
-        <p><span class="lang-ta">பள்ளி நிகழ்வுகள் & செயல்பாடுகள்</span><span class="lang-en">School Events & Activities</span></p>
+    <!-- Event Banner Slider -->
+    <section class="event-banner">
+        <div class="banner-slide active">
+            <img src="images/Rebublic.jpeg" alt="Republic Day">
+            <div class="banner-overlay">
+                <h3><span class="lang-ta">குடியரசு தின கொண்டாட்டம்</span><span class="lang-en">Republic Day Celebration</span></h3>
+                <p><span class="lang-ta">கொடி ஏற்றம் & சிறப்பு நிகழ்ச்சிகள்</span><span class="lang-en">Flag hoisting & Special programs</span></p>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="images/rebuclic1.jpeg" alt="Republic Day Students">
+            <div class="banner-overlay">
+                <h3><span class="lang-ta">தேசிய கொடியுடன் மாணவர்கள்</span><span class="lang-en">Students with National Flag</span></h3>
+                <p><span class="lang-ta">குடியரசு தின அணிவகுப்பு</span><span class="lang-en">Republic Day Parade</span></p>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="images/ncc.jpeg" alt="NCC Camp">
+            <div class="banner-overlay">
+                <h3><span class="lang-ta">NCC முகாம்</span><span class="lang-en">NCC Camp</span></h3>
+                <p><span class="lang-ta">தேசிய மாணவர் படை நிகழ்வு</span><span class="lang-en">National Cadet Corps Event</span></p>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="images/nss.jpeg" alt="NSS Camp">
+            <div class="banner-overlay">
+                <h3><span class="lang-ta">NSS முகாம்</span><span class="lang-en">NSS Camp</span></h3>
+                <p><span class="lang-ta">தேசிய சேவை திட்ட முகாம்</span><span class="lang-en">National Service Scheme Camp</span></p>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="images/nextlevel-carrier.jpeg" alt="Career Guidance">
+            <div class="banner-overlay">
+                <h3><span class="lang-ta">தொழில் வழிகாட்டுதல்</span><span class="lang-en">Career Guidance</span></h3>
+                <p><span class="lang-ta">மாணவர்களுக்கு தொழில் ஆலோசனை</span><span class="lang-en">Career counseling for students</span></p>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="images/nextlevel-carrier (2).jpeg" alt="Career Session">
+            <div class="banner-overlay">
+                <h3><span class="lang-ta">தொழில் வழிகாட்டுதல் அமர்வு</span><span class="lang-en">Career Guidance Session</span></h3>
+                <p><span class="lang-ta">மாணவர் உரை</span><span class="lang-en">Student presentation</span></p>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="images/medication camp.webp" alt="Yoga Day">
+            <div class="banner-overlay">
+                <h3><span class="lang-ta">யோகா தினம்</span><span class="lang-en">Yoga Day</span></h3>
+                <p><span class="lang-ta">மாணவர்கள் யோகா பயிற்சி</span><span class="lang-en">Students practicing Yoga</span></p>
+            </div>
+        </div>
+
+        <button class="banner-btn banner-prev">&#10094;</button>
+        <button class="banner-btn banner-next">&#10095;</button>
+        <div class="banner-dots">
+            <span class="banner-dot active"></span>
+            <span class="banner-dot"></span>
+            <span class="banner-dot"></span>
+            <span class="banner-dot"></span>
+            <span class="banner-dot"></span>
+            <span class="banner-dot"></span>
+            <span class="banner-dot"></span>
+        </div>
     </section>
 
     <!-- Notice -->
@@ -382,5 +576,41 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Event Banner Slider
+        (function() {
+            const slides = document.querySelectorAll('.banner-slide');
+            const dots = document.querySelectorAll('.banner-dot');
+            const prevBtn = document.querySelector('.banner-prev');
+            const nextBtn = document.querySelector('.banner-next');
+            let current = 0;
+            let autoSlide;
+
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function startAuto() {
+                autoSlide = setInterval(function() { goTo(current + 1); }, 4000);
+            }
+
+            function resetAuto() {
+                clearInterval(autoSlide);
+                startAuto();
+            }
+
+            prevBtn.addEventListener('click', function() { goTo(current - 1); resetAuto(); });
+            nextBtn.addEventListener('click', function() { goTo(current + 1); resetAuto(); });
+            dots.forEach(function(dot, i) {
+                dot.addEventListener('click', function() { goTo(i); resetAuto(); });
+            });
+
+            startAuto();
+        })();
+    </script>
 </body>
 </html>
